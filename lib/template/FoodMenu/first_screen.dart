@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/template/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'food_model.dart';
 import 'SecondScreen.dart';
@@ -19,7 +20,7 @@ class _FirstScreenState extends State<FirstScreen>
     return Scaffold(
       appBar: _buildAppBar(),
       drawer: _buildDrawer(),
-      endDrawer: _buildEndDrawer(),
+      //endDrawer: _buildEndDrawer(),
       body: _buildBody(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: _buildFloating(),
@@ -45,12 +46,29 @@ class _FirstScreenState extends State<FirstScreen>
   }
 
   Widget _buildDrawer() {
-    return Drawer(backgroundColor: Colors.grey, width: 250);
+    return Drawer(
+      backgroundColor: Colors.grey,
+      width: 250,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.of(
+                context,
+              ).push(CupertinoPageRoute(builder: (context) => LoginScreen()));
+            },
+            icon: Icon(Icons.login),
+            label: Text("LOGIN"),
+          ),
+        ],
+      ),
+    );
   }
 
-  Widget _buildEndDrawer() {
-    return Drawer();
-  }
+  // Widget _buildEndDrawer() {
+  //   return Drawer();
+  // }
 
   Widget _buildFloating() {
     return FloatingActionButton(

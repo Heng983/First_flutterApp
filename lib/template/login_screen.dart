@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/template/FoodMenu/first_screen.dart';
 //import 'package:flutter_application_1/template/FoodMenu/first_screen.dart';
 import 'package:flutter_application_1/template/main_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -114,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           debugPrint(_text);
                           Navigator.of(context).push(
                             CupertinoPageRoute(
-                              builder: (context) => MainScreen(),
+                              builder: (context) => FirstScreen(),
                             ),
                           );
                         } else {
