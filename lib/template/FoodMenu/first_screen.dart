@@ -47,19 +47,49 @@ class _FirstScreenState extends State<FirstScreen>
 
   Widget _buildDrawer() {
     return Drawer(
-      backgroundColor: Colors.grey,
       width: 250,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: ListView(
         children: [
-          ElevatedButton.icon(
-            onPressed: () {
-              Navigator.of(
-                context,
-              ).push(CupertinoPageRoute(builder: (context) => LoginScreen()));
+          DrawerHeader(
+            decoration: BoxDecoration(color: Color(0xFF84994F)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(Icons.person_2_sharp, size: 72, color: Colors.white),
+                SizedBox(height: 8),
+                Text(
+                  'Welcome',
+                  style: GoogleFonts.oswald(fontSize: 22, color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text("Home"),
+            onTap: () {
+              Navigator.of(context).pop();
             },
-            icon: Icon(Icons.login),
-            label: Text("LOGIN"),
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text("Profile"),
+            onTap: () {
+              Navigator.of(context).push(
+                CupertinoPageRoute(
+                  builder: (context) => LoginScreen(),
+                  fullscreenDialog: true,
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text("Settings"),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
           ),
         ],
       ),

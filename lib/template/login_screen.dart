@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/template/FoodMenu/first_screen.dart';
 //import 'package:flutter_application_1/template/FoodMenu/first_screen.dart';
@@ -75,8 +77,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     validator: (String? value) {
                       if (value!.isEmpty) {
                         return "Password is required";
+                      } else if (value.length < 6) {
+                        return "incorrect password";
+                      } else {
+                        return null;
                       }
-                      return null;
                     },
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.key),
@@ -105,24 +110,24 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: ElevatedButton.icon(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          return;
-                        }
-                        if (_emailCtrl.text == "admin@gmail.com" &&
-                            _passwordCtrl.text == "admin123") {
-                          setState(() {
-                            _text = "Login Successful";
-                          });
-                          debugPrint(_text);
-                          Navigator.of(context).push(
-                            CupertinoPageRoute(
-                              builder: (context) => FirstScreen(),
-                            ),
-                          );
-                        } else {
-                          setState(() {
-                            _text = "Login Failed";
-                          });
-                          debugPrint(_text);
+                          if (_emailCtrl.text == "admin@gmail.com" &&
+                              _passwordCtrl.text == "admin123") {
+                            setState(() {
+                              _text = "Login Successful";
+                            });
+                            debugPrint(_text);
+                            Navigator.of(context).push(
+                              CupertinoPageRoute(
+                                builder: (context) => MainScreen(),
+                                fullscreenDialog: true,
+                              ),
+                            );
+                          } else {
+                            setState(() {
+                              _text = "Login Failed";
+                            });
+                            debugPrint(_text);
+                          }
                         }
                       },
                       icon: Icon(Icons.login),
