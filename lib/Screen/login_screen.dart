@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/template/FoodMenu/first_screen.dart';
+import 'package:flutter_application_1/Screen/FoodMenu/first_screen.dart';
 //import 'package:flutter_application_1/template/FoodMenu/first_screen.dart';
-import 'package:flutter_application_1/template/main_screen.dart';
+import 'package:flutter_application_1/Screen/main_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:email_validator/email_validator.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/template/login_screen.dart';
+import 'package:flutter_application_1/Screen/FoodMenu/main_tabscreen_bar.dart';
+import 'package:flutter_application_1/Screen/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'food_model.dart';
 import 'SecondScreen.dart';
@@ -69,7 +70,12 @@ class _FirstScreenState extends State<FirstScreen>
             leading: Icon(Icons.home),
             title: Text("Home"),
             onTap: () {
-              Navigator.of(context).pop();
+              Navigator.of(context).push(
+                CupertinoPageRoute(
+                  builder: (context) => FirstScreen(),
+                  fullscreenDialog: true,
+                ),
+              );
             },
           ),
           ListTile(

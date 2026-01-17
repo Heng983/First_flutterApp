@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/fontsize_logic.dart';
-import 'package:flutter_application_1/template/FoodMenu/first_screen.dart';
-import 'package:flutter_application_1/template/login_screen.dart';
+import 'package:flutter_application_1/Screen/FoodMenu/first_screen.dart';
+import 'package:flutter_application_1/Screen/login_screen.dart';
 import 'package:flutter_application_1/themeMode.dart';
 //import 'package:flutter_application_1/service/provider.dart';
 import 'package:provider/provider.dart';

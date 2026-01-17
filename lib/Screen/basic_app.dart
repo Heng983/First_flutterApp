@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/fontsize_logic.dart';
-import 'package:flutter_application_1/template/FoodMenu/main_tabscreen_bar.dart';
-import 'package:flutter_application_1/template/login_screen.dart';
-import 'package:flutter_application_1/template/main_screen.dart';
+import 'package:flutter_application_1/Screen/FoodMenu/main_tabscreen_bar.dart';
+import 'package:flutter_application_1/Screen/login_screen.dart';
+import 'package:flutter_application_1/Screen/main_screen.dart';
 import 'package:flutter_application_1/themeMode.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +22,7 @@ class _BasicAppState extends State<BasicApp> {
   Widget build(BuildContext context) {
     int themeIndex = context.watch<Thememode>().themeIndex;
     return MaterialApp(
-      home: LoginScreen(),
+      home: MainScreen(),
       themeMode: themeIndex == 0
           ? ThemeMode.system
           : themeIndex == 1

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/template/FoodMenu/first_screen.dart';
-import 'package:flutter_application_1/template/login_screen.dart';
+import 'package:flutter_application_1/Screen/FoodMenu/first_screen.dart';
+import 'package:flutter_application_1/Screen/login_screen.dart';
 
 class MainTabscreenBar extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class MainTabscreenBar extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Main Screen"),
+          title: Text("HOME MENU"),
           bottom: TabBar(
             tabs: [
               Tab(icon: Icon(Icons.home), text: "Home"),
