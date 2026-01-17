@@ -1,7 +1,10 @@
 import 'dart:io';
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screen/FoodMenu/food_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 //import 'package:dropdown_search/dropdown_search.dart';
@@ -55,6 +58,8 @@ class _FormScreenState extends State<FormScreen> {
         key: _formkey,
         child: ListView(
           children: [
+            _buildSlideshow(),
+            SizedBox(height: 20),
             _buildEmailTextField(),
             SizedBox(height: 20),
             _buildDatePicker(),
@@ -71,6 +76,50 @@ class _FormScreenState extends State<FormScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildSlideshow() {
+    return CarouselSlider.builder(
+      options: CarouselOptions(
+        viewportFraction: 0.9,
+        autoPlay: true,
+        reverse: false,
+        aspectRatio: 4 / 3,
+      ),
+      itemCount: foodlist.length,
+      itemBuilder: (context, index, pageViewIndex) {
+        final item = foodlist[index];
+        return InkWell(
+          onTap: () {},
+          child: Card(
+            child: Column(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: ClipRRect(
+                      borderRadius: BorderRadiusGeometry.circular(16),
+                      child: Image.network(
+                        item.image,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Text(
+                    item.title,
+                    style: GoogleFonts.moul(fontSize: 16),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 
